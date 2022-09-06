@@ -214,8 +214,6 @@ class UserRedux extends Component {
         let { email, password, firstName, lastName,
             phoneNumber, address, gender, position, role, avatar } = this.state;
 
-
-        //console.log('check props from redux ', this.state)
         return (
             <div className='user-redux-container'>
                 <div className='title'>

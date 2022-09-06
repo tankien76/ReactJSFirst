@@ -32,7 +32,6 @@ const appReducer = (state = initialState, action) => {
                 }
             }
         case actionTypes.CHANGE_LANGUAGE:
-            //console.log('check redux props: ', action)
             return {
                 ...state,
                 language: action.language,
