@@ -14,12 +14,18 @@ class About extends Component {
                 </div>
                 <div className='section-about-content'>
                     <div className='content-left'>
-                        <iframe width="100%" height="400px"
+                        {/* <iframe width="100%" height="400px"
                             src="https://www.youtube.com/embed/jvZmVkWJphI?list=PLncHg6Kn2JT6E38Z3kit9Hnif1xC_9VqI"
                             title="#54 Phép Màu Khiến Redux Là Lựa Chọn Number 1 với React App | React - Redux cho người mới bắt đầu"
                             frameBorder="0"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                            allowFullScreen></iframe>
+                            allowFullScreen></iframe> */}
+
+                        <iframe width="100%" height="400px" src="https://www.youtube.com/embed/eK41R9lGBWg"
+                            title="Khoa xét nghiệm đạt chuẩn ISO 15189:2012 - Bệnh viện Gia An 115"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
                     </div>
                     <div className='content-right'>
                         <p>Track your progress with the free "My Learning" program here at W3Schools.

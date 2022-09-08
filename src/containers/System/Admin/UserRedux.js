@@ -377,9 +377,6 @@ const mapDispatchToProps = dispatch => {
         createNewUser: (data) => dispatch(actions.createNewUser(data)),
         fetchUserRedux: () => dispatch(actions.fetchAllUsersStart()),
         editAUserRedux: (data) => dispatch(actions.editAUser(data))
-
-        //processLogout: () => dispatch(actions.processLogout()),
-        //changeLanguageAppRedux: (language) => dispatch(actions.changeLanguageApp(language))
     };
 };
 

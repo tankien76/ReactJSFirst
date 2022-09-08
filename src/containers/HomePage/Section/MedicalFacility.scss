@@ -3,8 +3,10 @@
 
     .clinic-name {
         padding: 10px 0;
+    }
 
-        &:hover {
+    &:hover {
+        .clinic-name {
             color: #45c3d2;
         }
     }

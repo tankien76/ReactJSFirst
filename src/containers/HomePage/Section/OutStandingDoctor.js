@@ -4,7 +4,7 @@ import { FormattedMessage } from 'react-intl';
 import Slider from "react-slick";
 import * as actions from '../../../store/actions'
 import { LANGUAGES } from '../../../utils'
-import { withRouter } from 'react-router'
+import { withRouter } from 'react-router';
 
 class OutStandingDoctor extends Component {
 
@@ -35,6 +35,7 @@ class OutStandingDoctor extends Component {
 
     render() {
         let arrDoctors = this.state.arrDoctors;
+        console.log('check doctor >>>>>>>', arrDoctors)
         //arrDoctors = arrDoctors.concat(arrDoctors).concat(arrDoctors);
         let { language } = this.props;
         return (
@@ -64,8 +65,8 @@ class OutStandingDoctor extends Component {
                                                         style={{ backgroundImage: `url(${imageBase64})` }}></div>
                                                 </div>
                                                 <div className='position text-center'>
-                                                    <div>{language === LANGUAGES.VI ? nameVi : nameEn}</div>
-                                                    <div>Cơ xương khớp</div>
+                                                    <div className='osd-title'>{language === LANGUAGES.VI ? nameVi : nameEn}</div>
+                                                    <div>{item.Doctor_infor.specialtyData.name}</div>
                                                 </div>
                                             </div>
                                         </div>

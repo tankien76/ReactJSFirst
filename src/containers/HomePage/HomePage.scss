@@ -139,8 +139,15 @@
         cursor: pointer;
 
         .customize-border {
-            border: 1px solid red;
+            background-color: white;
+            border-radius: 5px;
             padding: 20px;
+
+            &:hover {
+                .osd-title {
+                    color: #45c3d2;
+                }
+            }
         }
     }
 }
