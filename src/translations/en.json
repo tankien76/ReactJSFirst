@@ -29,11 +29,15 @@
             "crud-user": "CRUD user",
             "crud-redux": "CRUD Redux",
             "clinic": "Clinics",
-            "manage-clinic": "Manage clinics",
+            "manage-clinic": "Add new clinics",
             "specialty": "Specialty",
             "manage-specialty": "Manage specialties",
             "handbook": "Handbook",
-            "manage-handbook": "Manage handbook"
+            "manage-handbook": "Manage handbook",
+            "edit-clinic": "Clinic information",
+            "list-clinic": "List Clinics",
+            "list-specialty": " List Specialties",
+            "edit-specialty": "Edit specialty"
         },
         "doctor": {
             "manage-schedule": "Manage Doctor's schedule",

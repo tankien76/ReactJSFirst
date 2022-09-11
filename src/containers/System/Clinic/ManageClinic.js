@@ -87,7 +87,7 @@ class ManageClinic extends Component {
                             onChange={(event) => { this.handleOnChangeInput(event, 'name') }} />
                     </div>
                     <div className='col-6 form-group'>
-                        <label>Tên Phòng khám</label>
+                        <label>Ảnh phòng khám</label>
                         <input className='form-control-file' type='file' onChange={(event) => { this.handleOnchangeImage(event) }} />
                     </div>
                     <div className='col-6 form-group'>

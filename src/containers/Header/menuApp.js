@@ -10,10 +10,6 @@ export const adminMenu = [
             },
             {
                 name: 'menu.admin.manage-doctor', link: '/system/manage-doctor'
-                // subMenus: [
-                //     { name: 'menu.system.system-administrator.user-manage', link: '/system/user-manage' },
-                //     { name: 'menu.system.system-administrator.user-redux', link: '/system/user-redux' },
-                // ]
             },
             // {
             //     name: 'menu.admin.manage-admin', link: '/system/user-admin'
@@ -27,7 +23,13 @@ export const adminMenu = [
         name: 'menu.admin.clinic',
         menus: [
             {
+                name: 'menu.admin.list-clinic', link: '/system/list-clinic'
+            },
+            {
                 name: 'menu.admin.manage-clinic', link: '/system/manage-clinic'
+            },
+            {
+                name: 'menu.admin.edit-clinic', link: '/system/edit-clinic'
             },
         ]
     },
@@ -35,15 +37,13 @@ export const adminMenu = [
         name: 'menu.admin.specialty',
         menus: [
             {
+                name: 'menu.admin.list-specialty', link: '/system/list-specialty'
+            },
+            {
                 name: 'menu.admin.manage-specialty', link: '/system/manage-specialty'
             },
-        ]
-    },
-    { //Quản lý cẩm nang
-        name: 'menu.admin.handbook',
-        menus: [
             {
-                name: 'menu.admin.manage-handbook', link: '/system/manage-handbook'
+                name: 'menu.admin.edit-specialty', link: '/system/edit-specialty'
             },
         ]
     },

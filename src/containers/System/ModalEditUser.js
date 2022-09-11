@@ -69,6 +69,7 @@ class ModalUserEditUser extends Component {
     }
 
     render() {
+        console.log('check state >>>>>>', this.state)
         return (
             <Modal isOpen={this.props.isOpen} toggle={() => { this.toggle() }} className={'modal-user-container'} size='lg'>
                 <ModalHeader toggle={() => { this.toggle() }}>Modal Edit title</ModalHeader>

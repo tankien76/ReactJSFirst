@@ -7,6 +7,10 @@ import Header from '../containers/Header/Header';
 import ManageDoctor from '../containers/System/Admin/ManageDoctor';
 import ManageSpecialty from '../containers/System/Specialty/ManageSpecialty';
 import ManageClinic from '../containers/System/Clinic/ManageClinic';
+import EditClinic from '../containers/System/Clinic/EditClinic';
+import ListClinic from '../containers/System/Clinic/ListClinic';
+import ListSpecialty from '../containers/System/Specialty/ListSpecialty';
+import EditSpecialty from '../containers/System/Specialty/EditSpecialty';
 
 class System extends Component {
     render() {
@@ -23,6 +27,10 @@ class System extends Component {
                             <Route path="/system/manage-doctor" component={ManageDoctor} />
                             <Route path="/system/manage-specialty" component={ManageSpecialty} />
                             <Route path="/system/manage-clinic" component={ManageClinic} />
+                            <Route path="/system/edit-clinic" component={EditClinic} />
+                            <Route path="/system/list-clinic" component={ListClinic} />
+                            <Route path="/system/list-specialty" component={ListSpecialty} />
+                            <Route path="/system/edit-specialty" component={EditSpecialty} />
                             <Route component={() => { return (<Redirect to={systemMenuPath} />) }} />
                         </Switch>
                     </div>

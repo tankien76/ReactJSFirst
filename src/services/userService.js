@@ -97,6 +97,18 @@ const postSendRemedy = (data) => {
     return axios.post('/api/send-remedy', data)
 }
 
+const editClinicService = (inputData) => {
+    return axios.put('/api/edit-clinic', inputData)
+}
+
+const deleteClinicService = (clinicId) => {
+    return axios.delete('/api/delete-clinic', { data: { id: clinicId } })
+}
+
+const editSpecialtyService = (inputData) => {
+    return axios.put('/api/edit-specialty', inputData)
+}
+
 export {
     handleLoginApi, getAllUser, createNewUserService,
     deleteUserService, editUserService, getAllCodeService,
@@ -104,5 +116,6 @@ export {
     getDetailInforDoctor, saveBulkScheduleDoctor, getScheduleDoctor,
     getExtraInfoById, getProfileById, postPatientBookAppointment, postVerifyBookAppointment,
     createNewSpecialty, getAllSpecialty, getDetailSpecialtyById, createNewClinic, getAllClinic,
-    getDetailClinicById, getAllPatient, postSendRemedy
+    getDetailClinicById, getAllPatient, postSendRemedy, editClinicService, deleteClinicService,
+    editSpecialtyService
 }

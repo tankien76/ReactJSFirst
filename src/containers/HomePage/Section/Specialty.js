@@ -31,6 +31,11 @@ class Specialty extends Component {
         }
     }
 
+    handleSearchSpecialty = () => {
+        if (this.props.history) {
+            this.props.history.push(`/search/specialty`)
+        }
+    }
 
     render() {
         let { dataSpecialty } = this.state;
@@ -40,7 +45,7 @@ class Specialty extends Component {
                 <div className='section-container'>
                     <div className='section-header'>
                         <span className='title-section'><FormattedMessage id='homepage.specialty' /></span>
-                        <button className='btn-section'><FormattedMessage id='homepage.more-info' /></button>
+                        <button className='btn-section' onClick={() => this.handleSearchSpecialty()}><FormattedMessage id='homepage.more-info' /></button>
                     </div>
 
                     <div className='section-body'>

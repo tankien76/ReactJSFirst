@@ -29,11 +29,13 @@
             "crud-user": "CRUD user",
             "crud-redux": "CRUD Redux",
             "clinic": "Phòng khám",
-            "manage-clinic": "Quản lý phòng khám",
+            "manage-clinic": "Tạo mới phòng khám",
             "specialty": "Chuyên khoa",
             "manage-specialty": "Quản lý chuyên khoa",
-            "handbook": "Cẩm nang",
-            "manage-handbook": "Quản lý cẩm nang"
+            "edit-clinic": "Sửa thông tin phòng khám",
+            "list-clinic": "Danh sách phòng khám",
+            "list-specialty": " Danh sách chuyên khoa",
+            "edit-specialty": "Sửa thông tin chuyên khoa"
         },
         "doctor": {
             "manage-schedule": "Quản lý kế hoạch khám bệnh",
@@ -77,7 +79,7 @@
             "text-address": "Địa chỉ khám",
             "price": "Giá khám: ",
             "detail": "Xem chi tiết",
-            "payment": "Người bệnh có thể thanh toán chi phí bằng hình thức:",
+            "payment": "Người bệnh có thể thanh toán chi phí bằng hình thức: ",
             "hide-price": "Ẩn chi tiết"
         },
         "booking-modal": {

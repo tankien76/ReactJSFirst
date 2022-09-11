@@ -3,6 +3,7 @@ import { FormattedMessage } from 'react-intl';
 import { connect } from 'react-redux';
 import './TableManageUser.scss';
 import * as actions from '../../../store/actions';
+
 import 'react-bootstrap-table2-paginator/dist/react-bootstrap-table2-paginator.min.css';
 import 'react-bootstrap-table-next/dist/react-bootstrap-table2.min.css';
 import paginationFactory from 'react-bootstrap-table2-paginator';
@@ -50,6 +51,7 @@ class TableManageUser extends Component {
 
     render() {
         let arrUsers = this.state.usersRedux;
+        console.log(arrUsers)
         let columns = [
             { dataField: "id", text: "#", sort: true, hidden: true },
             { dataField: "email", text: "Email", sort: true },
@@ -73,44 +75,9 @@ class TableManageUser extends Component {
             prePageText: "<",
             showTotal: true,
             alwaysShowAllBtns: false,
-            onPageChange: function (page, sizePerPage) {
-                console.log("page", page);
-                console.log("sizePerPage", sizePerPage);
-            },
-            onSizePerPageChange: function (page, sizePerPage) {
-                console.log("page", page);
-                console.log("sizePerPage", sizePerPage);
-            }
         });
         return (
             <React.Fragment>
-                {/* <table id='TableManageUser'>
-                    <tbody>
-                        <tr>
-                            <th>Email</th>
-                            <th>First name</th>
-                            <th>Last name</th>
-                            <th>Address</th>
-                            <th>Action</th>
-                        </tr>
-                        {arrUsers && arrUsers.length > 0 &&
-                            arrUsers.map((item, index) => {
-                                return (
-                                    <tr key={index} >
-                                        <td>{item.email}</td>
-                                        <td>{item.firstName}</td>
-                                        <td>{item.lastName}</td>
-                                        <td>{item.address}</td>
-                                        <td>
-                                            <button className='btn-edit' onClick={() => this.handleEditUser(item)}><i className="fas fa-edit"></i></button>
-                                            <button className='btn-delete' onClick={() => this.handleDeleteUser(item)} ><i className="far fa-trash-alt"></i></button>
-                                        </td>
-                                    </tr>
-                                )
-                            })
-                        }
-                    </tbody>
-                </table> */}
                 <BootstrapTable
                     bootstrap4
                     keyField="id"

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import './HomeHeader.scss';
-import logo from '../../assets/bookingcare-2020.svg';
+import logo from '../../assets/logo.png';
 import { FormattedMessage } from 'react-intl';
 import { LANGUAGES } from '../../utils/constant';
 import { withRouter } from 'react-router'

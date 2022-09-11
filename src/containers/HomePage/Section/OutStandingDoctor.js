@@ -33,9 +33,14 @@ class OutStandingDoctor extends Component {
         }
     }
 
+    handleSearchOD = () => {
+        if (this.props.history) {
+            this.props.history.push(`/search/outstanding-doctor`)
+        }
+    }
+
     render() {
         let arrDoctors = this.state.arrDoctors;
-        console.log('check doctor >>>>>>>', arrDoctors)
         //arrDoctors = arrDoctors.concat(arrDoctors).concat(arrDoctors);
         let { language } = this.props;
         return (
@@ -43,7 +48,7 @@ class OutStandingDoctor extends Component {
                 <div className='section-container'>
                     <div className='section-header'>
                         <span className='title-section'><FormattedMessage id={'homepage.outstanding-doctor'} /></span>
-                        <button className='btn-section'><FormattedMessage id={'homepage.more-info'} /></button>
+                        <button className='btn-section' onClick={() => this.handleSearchOD()}><FormattedMessage id={'homepage.more-info'} /></button>
                     </div>
 
                     <div className='section-body'>

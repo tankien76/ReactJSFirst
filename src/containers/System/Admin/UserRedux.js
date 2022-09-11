@@ -186,7 +186,6 @@ class UserRedux extends Component {
             imageBase64 = new Buffer(user.image, 'base64').toString('binary');
         }
 
-
         this.setState({
             email: user.email,
             password: 'Hardcode',
