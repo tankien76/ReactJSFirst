@@ -71,8 +71,9 @@ class DetailClinic extends Component {
                         {dataDetailClinic && !_.isEmpty(dataDetailClinic)
                             &&
                             <>
-                                <div>{dataDetailClinic.name}</div>
-                                <div>{dataDetailClinic.address}</div>
+                                <div className='intro-header'>Giới thiệu chung</div>
+                                <div className='clinic-name'>{dataDetailClinic.name}</div>
+                                <div className='clinic-address'>{dataDetailClinic.address}</div>
                                 <div dangerouslySetInnerHTML={{ __html: dataDetailClinic.descriptionHTML }}></div>
                             </>
                         }
