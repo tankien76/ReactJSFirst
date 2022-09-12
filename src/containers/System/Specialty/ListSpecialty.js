@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux";
 import { FormattedMessage } from 'react-intl';
-// import './ListSpecialty.scss'
 import { getAllSpecialty } from '../../../services/userService';
 
 class ListSpecialty extends Component {
@@ -25,9 +24,11 @@ class ListSpecialty extends Component {
 
     fetchAllSpecialty = async () => {
         let res = await getAllSpecialty();
-        this.setState({
-            arrSpecialty: res.data
-        })
+        if (res && res.errCode === 0) {
+            this.setState({
+                arrSpecialty: res.data ? res.data : []
+            })
+        }
     }
 
 

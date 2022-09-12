@@ -97,6 +97,9 @@
             "btn-cancel": "Cancel",
             "price-booking": "Free booking",
             "price": "Price: "
+        },
+        "detail-specialty": {
+            "no-doctor": "No doctors in this province!"
         }
     },
     "admin": {

@@ -13,10 +13,18 @@
 
 }
 
-.slick-prev::before,
+.slick-prev::before {
+    font-family: "Font Awesome 5 Free" !important;
+    content: "\f053" !important;
+    font-weight: 900;
+    color: rgb(105, 105, 105) !important;
+}
+
 .slick-next::before {
-    font-family: FontAwesome !important;
-    color: red !important;
+    font-family: "Font Awesome 5 Free" !important;
+    content: "\f054" !important;
+    font-weight: 900;
+    color: rgb(105, 105, 105) !important;
 }
 
 .slick-next {

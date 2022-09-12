@@ -56,11 +56,18 @@ class DetailClinic extends Component {
 
     render() {
         let { arrDoctorId, dataDetailClinic } = this.state;
+        let imageBase64 = ''
+        if (dataDetailClinic && dataDetailClinic.image) {
+            imageBase64 = new Buffer(dataDetailClinic.image, 'base64').toString('binary');
+        }
         return (
-            <div className='detail-specialty-container'>
+            <div className='detail-clinic-container'>
                 <HomeHeader />
-                <div className='detail-specialty-body'>
-                    <div className='description-specialty'>
+                <div className='detail-clinic-body'>
+                    {dataDetailClinic && dataDetailClinic.image &&
+                        <div className='clinic-image' style={{ backgroundImage: `url(${imageBase64})` }}></div>
+                    }
+                    <div className='description-clinic'>
                         {dataDetailClinic && !_.isEmpty(dataDetailClinic)
                             &&
                             <>

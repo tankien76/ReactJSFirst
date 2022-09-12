@@ -37,3 +37,9 @@ export const USER_ROLE = {
     DOCTOR: 'R2',
     PATIENT: 'R3'
 }
+
+export const SEARCH_PATH = {
+    SPECIALTY: '/search/specialty',
+    CLINIC: '/search/clinic',
+    OD: '/search/outstanding-doctor'
+}

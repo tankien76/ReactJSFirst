@@ -26,9 +26,11 @@ class ListClinic extends Component {
 
     fetchAllClinic = async () => {
         let res = await getAllClinic();
-        this.setState({
-            arrClinics: res.data
-        })
+        if (res && res.errCode === 0) {
+            this.setState({
+                arrClinics: res.data ? res.data : []
+            })
+        }
     }
 
     handleDeleteUser = async (clinicData) => {

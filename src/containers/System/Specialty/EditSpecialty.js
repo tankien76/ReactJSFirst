@@ -54,9 +54,11 @@ class EditSpecialty extends Component {
 
     fetchAllSpecialty = async () => {
         let res = await getAllSpecialty();
-        this.setState({
-            listSpecialty: this.buildDataInputSelect(res.data)
-        })
+        if (res && res.errCode === 0) {
+            this.setState({
+                listSpecialty: res.data ? this.buildDataInputSelect(res.data) : []
+            })
+        }
     }
 
     handleChangeSelect = async (selectedSpecialty) => {

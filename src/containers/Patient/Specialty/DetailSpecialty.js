@@ -81,8 +81,6 @@ class DetailSpecialty extends Component {
                 location: location
             });
 
-            let resProvince = await getAllCodeService('PROVINCE')
-
             if (res && res.errCode === 0) {
                 let data = res.data;
                 let arrDoctorId = [];
@@ -106,59 +104,124 @@ class DetailSpecialty extends Component {
     render() {
         let { arrDoctorId, dataDetailSpecialty, listProvince } = this.state;
         let { language } = this.props;
-        console.log(dataDetailSpecialty)
+
+        let imageBase64 = ''
+        if (dataDetailSpecialty && dataDetailSpecialty.image) {
+            imageBase64 = new Buffer(dataDetailSpecialty.image, 'base64').toString('binary');
+        }
         return (
-            <div className='detail-specialty-container'>
-                <HomeHeader />
-                <div className='detail-specialty-body'>
-                    <div className='description-specialty'>
-                        {dataDetailSpecialty && !_.isEmpty(dataDetailSpecialty)
-                            &&
-                            <div dangerouslySetInnerHTML={{ __html: dataDetailSpecialty.descriptionHTML }}></div>
-                        }
-                    </div>
-                    <div className='search-doctor'>
-                        <select onChange={(event) => { this.handleOnChangeSelect(event) }}>
-                            {listProvince && listProvince.length > 0 &&
-                                listProvince.map((item, index) => {
+            <>
+                {dataDetailSpecialty && !_.isEmpty(dataDetailSpecialty) && dataDetailSpecialty.image &&
+                    <div className='detail-specialty-container'>
+                        <HomeHeader />
+                        <div className='detail-specialty-body'>
+                            <div className='description-specialty' style={{ backgroundImage: `url(${imageBase64})` }}>
+                                {dataDetailSpecialty && !_.isEmpty(dataDetailSpecialty)
+                                    &&
+                                    <div className='content-specialty-body' dangerouslySetInnerHTML={{ __html: dataDetailSpecialty.descriptionHTML }}></div>
+                                }
+                            </div>
+                            <div className='search-doctor'>
+                                <select onChange={(event) => { this.handleOnChangeSelect(event) }}>
+                                    {listProvince && listProvince.length > 0 &&
+                                        listProvince.map((item, index) => {
+                                            return (
+                                                <option key={index} value={item.keyMap}>{language === LANGUAGES.VI ? item.valueVi : item.valueEn}</option>
+                                            )
+                                        })
+                                    }
+                                </select>
+                            </div>
+                            {arrDoctorId && arrDoctorId.length > 0 ?
+                                arrDoctorId.map((item, index) => {
                                     return (
-                                        <option key={index} value={item.keyMap}>{language === LANGUAGES.VI ? item.valueVi : item.valueEn}</option>
+                                        <div className='each-doctor' key={index}>
+                                            <div className='detail-content-left'>
+                                                <div className='profile-doctor'>
+                                                    <ProfileDoctor
+                                                        doctorId={item}
+                                                        isShowDescriptionDoctor={true}
+                                                        isShowLinkDetail={true}
+                                                        isShowPrice={false}
+                                                    />
+                                                </div>
+                                            </div>
+                                            <div className='detail-content-right'>
+                                                <div className='doctor-schedule'>
+                                                    <DoctorSchedule
+                                                        doctorIdFromParent={item}
+                                                    />
+                                                </div>
+                                                <div className='doctor-extra-infor'>
+                                                    <DoctorExtraInfo doctorIdFromParent={item} />
+                                                </div>
+                                            </div>
+                                        </div>
                                     )
                                 })
-
-                            }
-                        </select>
-                    </div>
-                    {arrDoctorId && arrDoctorId.length > 0 &&
-                        arrDoctorId.map((item, index) => {
-                            return (
-                                <div className='each-doctor' key={index}>
-                                    <div className='detail-content-left'>
-                                        <div className='profile-doctor'>
-                                            <ProfileDoctor
-                                                doctorId={item}
-                                                isShowDescriptionDoctor={true}
-                                                isShowLinkDetail={true}
-                                                isShowPrice={false}
-                                            />
-                                        </div>
-                                    </div>
-                                    <div className='detail-content-right'>
-                                        <div className='doctor-schedule'>
-                                            <DoctorSchedule
-                                                doctorIdFromParent={item}
-                                            />
-                                        </div>
-                                        <div className='doctor-extra-infor'>
-                                            <DoctorExtraInfo doctorIdFromParent={item} />
-                                        </div>
-                                    </div>
+                                :
+                                <div className='no-doctor'>
+                                    <FormattedMessage id='patient.detail-specialty.no-doctor' />
                                 </div>
-                            )
-                        })
-                    }
-                </div>
-            </div>
+                            }
+                        </div>
+                    </div>
+                }
+                {/* {dataDetailSpecialty && !_.isEmpty(dataDetailSpecialty) && !dataDetailSpecialty.image &&
+                    <div className='detail-specialty-container'>
+                        <HomeHeader />
+                        <div className='detail-specialty-body'>
+                            <div className='description-specialty'>
+                                {dataDetailSpecialty && !_.isEmpty(dataDetailSpecialty)
+                                    &&
+                                    <div dangerouslySetInnerHTML={{ __html: dataDetailSpecialty.descriptionHTML }}></div>
+                                }
+                            </div>
+                            <div className='search-doctor'>
+                                <select onChange={(event) => { this.handleOnChangeSelect(event) }}>
+                                    {listProvince && listProvince.length > 0 &&
+                                        listProvince.map((item, index) => {
+                                            return (
+                                                <option key={index} value={item.keyMap}>{language === LANGUAGES.VI ? item.valueVi : item.valueEn}</option>
+                                            )
+                                        })
+
+                                    }
+                                </select>
+                            </div>
+                            {arrDoctorId && arrDoctorId.length > 0 &&
+                                arrDoctorId.map((item, index) => {
+                                    return (
+                                        <div className='each-doctor' key={index}>
+                                            <div className='detail-content-left'>
+                                                <div className='profile-doctor'>
+                                                    <ProfileDoctor
+                                                        doctorId={item}
+                                                        isShowDescriptionDoctor={true}
+                                                        isShowLinkDetail={true}
+                                                        isShowPrice={false}
+                                                    />
+                                                </div>
+                                            </div>
+                                            <div className='detail-content-right'>
+                                                <div className='doctor-schedule'>
+                                                    <DoctorSchedule
+                                                        doctorIdFromParent={item}
+                                                    />
+                                                </div>
+                                                <div className='doctor-extra-infor'>
+                                                    <DoctorExtraInfo doctorIdFromParent={item} />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    )
+                                })
+                            }
+                        </div>
+                    </div>
+                } */}
+            </>
+
         );
     }
 }

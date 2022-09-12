@@ -109,6 +109,10 @@ const editSpecialtyService = (inputData) => {
     return axios.put('/api/edit-specialty', inputData)
 }
 
+const getAllDoctorsSearch = () => {
+    return axios.get(`/api/get-all-doctor-for-search`)
+}
+
 export {
     handleLoginApi, getAllUser, createNewUserService,
     deleteUserService, editUserService, getAllCodeService,
@@ -117,5 +121,5 @@ export {
     getExtraInfoById, getProfileById, postPatientBookAppointment, postVerifyBookAppointment,
     createNewSpecialty, getAllSpecialty, getDetailSpecialtyById, createNewClinic, getAllClinic,
     getDetailClinicById, getAllPatient, postSendRemedy, editClinicService, deleteClinicService,
-    editSpecialtyService
+    editSpecialtyService, getAllDoctorsSearch
 }

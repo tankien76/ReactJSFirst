@@ -30,6 +30,12 @@ class MedicalFacility extends Component {
         }
     }
 
+    handleSearchClinic = () => {
+        if (this.props.history) {
+            this.props.history.push(`/search/clinic`)
+        }
+    }
+
     render() {
 
         let { dataClinics } = this.state;
@@ -38,7 +44,7 @@ class MedicalFacility extends Component {
                 <div className='section-container'>
                     <div className='section-header'>
                         <span className='title-section'>Cơ sở y tế nổi bật</span>
-                        <button className='btn-section'>Tìm kiếm</button>
+                        <button className='btn-section' onClick={() => this.handleSearchClinic()}>Tìm kiếm</button>
                     </div>
 
                     <div className='section-body'>

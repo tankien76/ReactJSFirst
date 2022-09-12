@@ -58,7 +58,7 @@ class EditClinic extends Component {
         let res = await getAllClinic();
         if (res && res.errCode === 0) {
             this.setState({
-                listClinic: this.buildDataInputSelect(res.data),
+                listClinic: res.data ? this.buildDataInputSelect(res.data) : [],
             })
         }
     }

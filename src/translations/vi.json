@@ -95,6 +95,9 @@
             "btn-cancel": "Hủy bỏ",
             "price-booking": "Miễn phí đặt lịch",
             "price": "Giá khám: "
+        },
+        "detail-specialty": {
+            "no-doctor": "Không có bác sĩ tại khu vực này!"
         }
     },
     "admin": {
