@@ -107,7 +107,7 @@ class DetailSpecialty extends Component {
 
         let imageBase64 = ''
         if (dataDetailSpecialty && dataDetailSpecialty.image) {
-            imageBase64 = new Buffer(dataDetailSpecialty.image, 'base64').toString('binary');
+            imageBase64 = Buffer.from(dataDetailSpecialty.image, 'base64').toString('binary');
         }
         return (
             <>

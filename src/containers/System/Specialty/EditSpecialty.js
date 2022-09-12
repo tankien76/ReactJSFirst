@@ -71,7 +71,7 @@ class EditSpecialty extends Component {
         let res = await getDetailSpecialtyById(data);
 
         if (res && res.errCode === 0 && res.data && res.data.image) {
-            let imgBase64 = new Buffer(res.data.image, 'base64').toString('binary');
+            let imgBase64 = Buffer.from(res.data.image, 'base64').toString('binary');
             this.setState({
                 contentMarkdown: res.data.descriptionMarkdown,
                 contentHTML: res.data.descriptionHTML,

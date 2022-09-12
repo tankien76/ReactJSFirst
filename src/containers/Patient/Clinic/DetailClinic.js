@@ -58,7 +58,7 @@ class DetailClinic extends Component {
         let { arrDoctorId, dataDetailClinic } = this.state;
         let imageBase64 = ''
         if (dataDetailClinic && dataDetailClinic.image) {
-            imageBase64 = new Buffer(dataDetailClinic.image, 'base64').toString('binary');
+            imageBase64 = Buffer.from(dataDetailClinic.image, 'base64').toString('binary');
         }
         return (
             <div className='detail-clinic-container'>
