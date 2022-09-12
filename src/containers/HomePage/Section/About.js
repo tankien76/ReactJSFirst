@@ -10,7 +10,7 @@ class About extends Component {
         return (
             <div className='section-share section-about'>
                 <div className='section-about-header'>
-                    Truyền thông nói gì về M
+                    <FormattedMessage id='homepage.about' />
                 </div>
                 <div className='section-about-content'>
                     <div className='content-left'>
@@ -28,9 +28,11 @@ class About extends Component {
                             allowfullscreen></iframe>
                     </div>
                     <div className='content-right'>
-                        <p>Track your progress with the free "My Learning" program here at W3Schools.
-                            Log into your account, and start earning points!
-                            This is an optional feature, you can study W3Schools without using My Learning.
+                        <p>Health is the biggest wealth for a human being in his/her entire lifetime.
+                            One can survive without excess money but can not survive without good health.
+                            Health is something that we can not buy with money but we can take care of it and we can cure it when needed with the help of the money.
+                            If a person is not having good health, he will not be able to enjoy his/her life to the fullest.
+                            Money does not make a person rich and happy but good health does. Moreover, a person can not feel complete and happy without good health.
                         </p>
                     </div>
                 </div>

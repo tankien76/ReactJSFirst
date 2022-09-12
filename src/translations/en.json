@@ -62,7 +62,10 @@
     "homepage": {
         "outstanding-doctor": "Last week's featured doctor",
         "more-info": "More Infor",
-        "specialty": "Popular specialties"
+        "specialty": "Popular specialties",
+        "clinic": "Top medical facility",
+        "about": "About M",
+        "search": "Search"
     },
     "manage-schedule": {
         "title": "Manage doctor's examination plan",
@@ -81,7 +84,7 @@
             "text-address": "Address of examination",
             "price": "Price: ",
             "detail": "Details",
-            "payment": "The patient can pay the cost in the form of:",
+            "payment": "The patient can pay the cost in the form of: ",
             "hide-price": "Hide"
         },
         "booking-modal": {

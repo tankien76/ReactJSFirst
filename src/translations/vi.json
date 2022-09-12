@@ -60,7 +60,10 @@
     "homepage": {
         "outstanding-doctor": "Bác sĩ nổi bật tuần qua",
         "more-info": "Xem thêm",
-        "specialty": "Chuyên khoa phổ biến"
+        "specialty": "Chuyên khoa phổ biến",
+        "clinic": "Cơ sở y tế nổi bật",
+        "about": "Truyền thông nói gì về M",
+        "search": "Tìm kiếm"
     },
     "manage-schedule": {
         "title": "Quản lý kế hoạch khám bệnh của bác sĩ",
